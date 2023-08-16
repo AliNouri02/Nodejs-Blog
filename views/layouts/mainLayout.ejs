@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" href="/css/styles.css" />
+        <link rel="stylesheet" href="/css/bootstrap-rtl.css" />
+        <link rel="stylesheet" href="/css/font-awesome.css" />
+        <% if(path === "/login" || path === "/register"){ %>
+        <link rel="stylesheet" href="/css/signin.css" />
+        <script
+            src="https://www.google.com/recaptcha/api.js?hl=fa"
+            async
+            defer
+        ></script>
+        <% } %> <% if(path === "/404") {%>
+        <link rel="stylesheet" href="/css/404.css" />
+        <% } %>
+        <title><%= pageTitle %></title>
+    </head>
+    <body class="rtl">
+        <%- body %>
+        <script src="/js/jquery.slim.min.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
+    </body>
+</html>

@@ -1,0 +1,94 @@
+<%- include("./includes/navbar.ejs") %>
+<!-- Page Content -->
+<div class="container mt-5">
+    <div class="row">
+        <!-- Post Content Column -->
+        <div class="col">
+            <!-- Title -->
+            <h1 class="mt-4"><%= post.title %></h1> 
+
+            <!-- Author -->
+            <p class="lead">
+                نوشته شده توسط :
+                <a href="#"><%= post.user.fullname %></a>
+            </p>
+
+            <hr />
+
+            <!-- Date/Time -->
+            <p>تاریخ انتشار : <%= formatDate(post.createAt)%></p>
+
+            <hr />
+
+            <!-- Preview Image -->
+            <div class="text-center">
+                <img
+                    class="img-fluid rounded"
+                    src='<%= src%>'
+                    alt=""
+                />
+            </div>
+
+            <hr />
+
+            <!-- Post Content -->
+            <p class="text-justify"><%- post.body %></p>
+
+            <hr />
+
+            <!-- Comments Form -->
+            <div class="card my-4">
+                <h5 class="card-header">نظر خود را بنویسید:</h5>
+                <div class="card-body">
+                    <form>
+                        <div class="form-group">
+                            <textarea class="form-control" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            ثبت نظر
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Single Comment -->
+            <div class="media mb-4">
+                <img
+                    class="d-flex mr-3 rounded-circle"
+                    src="http://placehold.it/50x50"
+                    alt=""
+                />
+                <div class="media-body">
+                    <h5 class="mt-0">یونس قربانی</h5>
+                    این یک نظر تست می باشد
+                </div>
+            </div>
+
+            <!-- Comment with nested comments -->
+            <div class="media mb-4">
+                <img
+                    class="d-flex mr-3 rounded-circle"
+                    src="http://placehold.it/50x50"
+                    alt=""
+                />
+                <div class="media-body">
+                    <h5 class="mt-0">یونس قربانی</h5>
+                    نظر تست
+
+                    <div class="media mt-4">
+                        <img
+                            class="d-flex mr-3 rounded-circle"
+                            src="http://placehold.it/50x50"
+                            alt=""
+                        />
+                        <div class="media-body">
+                            <h5 class="mt-0">یونس قربانی</h5>
+                            نظر تست
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('./includes/footer.ejs') %>

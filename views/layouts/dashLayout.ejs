@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="stylesheet" href="/css/bootstrap-rtl.css" />
+    <link rel="stylesheet" href="/css/font-awesome.css" />
+    <title><%= pageTitle %></title>
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor/4.15.1/ckeditor.js"
+      integrity="sha512-aThGT4RJc95+zt2vrs8iMjrFpsJxcFclp7tweVls6/3cNo3GWvGvtLV576o8Kdvdf3fJhrrG3wkmoea/KJMLFQ=="
+      crossorigin="anonymous"
+    ></script>
+    <link href="/css/dashboard.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body class="rtl">
+    <nav
+      class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow"
+    >
+      <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="#"
+        >سلام <%= fullname %></a
+      >
+      <button
+        class="navbar-toggler position-absolute d-md-none collapsed"
+        type="button"
+        data-toggle="collapse"
+        data-target="#sidebarMenu"
+        aria-controls="sidebarMenu"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <form action="/dashboard/search" method="POST" class="w-100">
+        <input
+            class="form-control form-control-dark"
+            type="text"
+            name="search"
+            placeholder="جستجو"
+            aria-label="Search"
+        />
+    </form>
+      <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+          <a class="nav-link" href="/users/logout">خروج</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="container-fluid">
+      <div class="row">
+        <%- include('../private/dashSidebar.ejs') %>
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+          <%- body %>
+        </main>
+      </div>
+    </div>
+    <%if(path === "/dashboard/add-post"){ %>
+    <script src="/js/upload.js"></script>
+    <% } %>
+    <script>
+      CKEDITOR.replace("body", {
+        language: "fa",
+      });
+    </script>
+    <script src="/js/jquery.slim.min.js"></script>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

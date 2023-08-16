@@ -1,0 +1,57 @@
+<form class="form-signin" action="/users/register" method="POST">
+  <%-include('./includes/validationErrors.ejs')%>
+  <h1 class="h3 mb-3 font-weight-normal">ثبت نام کاربر</h1>
+  <label for="inputFullName" class="sr-only">نام و نام خانوادگی</label>
+  <input
+    type="text"
+    name="fullname"
+    id="inputFullName"
+    class="form-control my-2"
+    placeholder="نام و نام خانوادگی خود را وارد کنید"
+    required
+    autofocus
+  />
+  <label for="inputEmail" class="sr-only">آدرس ایمیل</label>
+  <input
+    type="email"
+    name="email"
+    id="inputEmail"
+    class="form-control"
+    placeholder="آدرس ایمیل"
+    required
+    autofocus
+  />
+  <label for="inputPassword" class="sr-only">کلمه عبور</label>
+  <input
+    type="password"
+    name="password"
+    id="inputPassword"
+    class="form-control"
+    placeholder="کلمه عبور"
+    required
+  />
+  <label for="inputConfirmPassword" class="sr-only"> تکرار کلمه عبور</label>
+  <input
+    type="password"
+    name="confirmPassword"
+    id="inputConfirmPassword"
+    class="form-control my-2"
+    placeholder="تکرار کلمه عبور"
+    required
+  />
+  <div class="checkbox mb-3">
+    <label>
+      <a href="/users/login">اکانت کاربری دارم</a>
+    </label>
+  </div>
+  <div class="form-group">
+    <div
+      class="g-recaptcha my-1"
+      data-sitekey="6LdDPwwnAAAAADbodttGoglcxxT0dYausr9shBYT"
+    ></div>
+  </div>
+
+  <button class="btn btn-lg btn-primary btn-block" type="submit">
+    ثبت نام
+  </button>
+</form>

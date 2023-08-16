@@ -1,0 +1,78 @@
+<%- include('./includes/navbar.ejs') %>
+<div class="container mt-5">
+    <div class="bg-light">
+        <div class="w-25 text-center mx-auto">
+            <%- include("./includes/loginMessages.ejs") %> <%-
+            include("./includes/validationErrors.ejs") %>
+        </div>
+        <form class="mx-auto w-50" action="/contact" method="post">
+            <fieldset>
+                <legend class="text-center">تماس با ما</legend>
+
+                <!-- Name input-->
+                <div class="form-group">
+                    <label class="col-md-3 control-label" for="name"
+                        >نام و نام خانوادگی</label
+                    >
+                    <div class="col-md-9">
+                        <input
+                            id="name"
+                            name="fullname"
+                            type="text"
+                            placeholder="نام و نام خانوادگی"
+                            class="form-control"
+                        />
+                    </div>
+                </div>
+
+                <!-- Email input-->
+                <div class="form-group">
+                    <label class="col-md-3 control-label" for="email"
+                        >آدرس ایمیل</label
+                    >
+                    <div class="col-md-9">
+                        <input
+                            id="email"
+                            name="email"
+                            type="text"
+                            placeholder="ایمیل شما"
+                            class="form-control"
+                        />
+                    </div>
+                </div>
+
+                <!-- Message body -->
+                <div class="form-group">
+                    <label class="col-md-3 control-label" for="message"
+                        >پیام شما</label
+                    >
+                    <div class="col-md-9">
+                        <textarea
+                            class="form-control"
+                            id="message"
+                            name="message"
+                            placeholder="لطفاً پیام را در اینجا نوشته و ارسال کنید"
+                            rows="5"
+                        ></textarea>
+                    </div>
+                </div>
+                <div class="w-25 text-center">
+                    <img src="/captcha.png" alt="captcha" />
+                    <input
+                        type="text"
+                        class="form-control"
+                        name="captcha"
+                        placeholder="کد امنیتی"
+                    />
+                </div>
+
+                <!-- Form actions -->
+                <div class="form-group mt-4">
+                    <button type="submit" class="btn btn-primary btn-lg">
+                        ارسال پیام
+                    </button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>

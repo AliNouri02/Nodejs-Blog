@@ -1,0 +1,30 @@
+<form
+    id="loginForm"
+    class="form-signin"
+    action="/users/reset-password/<%= userId %>"
+    method="POST"
+>
+    <h1 class="h3 mb-3 font-weight-normal">تغییر رمز عبور</h1>
+    <%- include("./includes/loginMessages.ejs") %>
+    <label for="inputPassword" class="sr-only">کلمه عبور</label>
+    <input
+        type="password"
+        name="password"
+        id="inputPassword"
+        class="form-control mb-2"
+        placeholder="کلمه عبور"
+        required
+    />
+    <label for="inputConfirmPassword" class="sr-only">تکرار کلمه عبور</label>
+    <input
+        type="password"
+        name="confirmPassword"
+        id="inputConfirmPassword"
+        class="form-control mb-2"
+        placeholder="تکرار کلمه عبور"
+        required
+    />
+    <button class="btn btn-lg btn-primary btn-block" type="submit">
+        تغییر رمز عبور
+    </button>
+</form>

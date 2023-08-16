@@ -1,0 +1,49 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV=production node app",
+    "dev": "cross-env NODE_ENV=development DEBUG=blog-project nodemon app"
+  },
+  "keywords": [],
+  "author": "Ali",
+  "license": "ISC",
+  "dependencies": {
+    "app-root-path": "^3.1.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.2",
+    "captchapng": "^0.0.1",
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^5.0.0",
+    "cross-fetch": "^4.0.0",
+    "debug": "^4.3.4",
+    "dotenv": "^16.3.1",
+    "ejs": "^3.1.9",
+    "esm": "^3.2.25",
+    "express": "^4.18.2",
+    "express-ejs-layouts": "^2.5.1",
+    "express-fileupload": "^1.4.0",
+    "express-session": "^1.17.3",
+    "jalali-moment": "^3.3.11",
+    "jsonwebtoken": "^9.0.1",
+    "mongoose": "^7.3.2",
+    "multer": "^1.4.5-lts.1",
+    "node-fetch": "^3.3.1",
+    "nodemailer": "^6.9.4",
+    "nodemailer-smtp-transport": "^2.7.4",
+    "nodemon": "^2.0.22",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
+    "sharp": "^0.32.2",
+    "shortid": "^2.2.16",
+    "uuid": "^9.0.0",
+    "winston": "^3.9.0",
+    "yup": "^1.2.0"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "morgan": "^1.10.0"
+  }
+}
